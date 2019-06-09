@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HOMEPAGE</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<STYLE >
+    body{
+background-image:url("https://cdn.wallpapersafari.com/20/31/QG9q3w.jpg");
+background-size:1500px;
+}
+</STYLE>
+<body>
+<H1 class="text-center " style="color:blue"> WELCOME TO STUDENTS DATABASE</H1>
+<br>
+<br>
+<div class="jumbotron" >
+    <ul style="color:red">
+    <p>THIS WEBSITE HOLD THE DATA OF VARIOUS STUDENTS</p>
+    </ul>
+    <br>
+    <ul style="color:red">
+        <P>YOU CAN ADD OR VIEW VARIOUS DETAILS OF STUDENT</P> .
+    </ul>
+</div>
+<UL><h4 style="COLOR : RED " ><a href="{% url 'information:list' %}" class="text-info"> STUDENT DATABASE (click here for student database}</a></h4></UL>
+<BR>
+<BR>
+<BR>
+<ul><h4><a href="{% url 'information:add_detail' %}" class="text-info"> ADD INFORMATION TO DATABASE (click here to update database ) </a></h4></ul>
+</body>
+</html>

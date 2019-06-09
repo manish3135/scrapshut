@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>add detail</title>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<style>
+ .span4 img {
+    margin-right: 10px;
+}
+.span4 .img-left {
+    float: left;
+    width: 40%;
+    height : 50%
+}
+.span4 .video-fluid z-depth-1 {
+      width : 100%;
+      height : 30%;
+}
+.jumbotron {
+     background-image : url('https://cdn.pixabay.com/photo/2017/03/02/08/58/background-texture-2110724__340.jpg');
+}
+
+</style>
+</head>
+<body>
+<H1 style="COLOR:PURPLE" class="text-center ">INFORMATION OF STUDENTS</H1>
+<h4><a href="{% url 'information:add_detail' %}" class="text-info"> CLICK TO ADD STUDENTS</a></h4>
+<h4><a href="{% url 'homepage' %}" class="text-info"> BACK TO HOMEPAGE </a></h4>
+<br>
+<br>
+{% for details in Info %}
+<div class="container">
+    <div class="jumbotron" >
+	<div class="row">
+		<h2 style="color : RED" class="text-uppercase"> {{ details.name }}</h2>
+	</div>
+	<div class="block">
+      <div class="row">
+        <div class="span4">
+            {% if details.photo %}
+          <img class="img-left img-thumbnail" src="{{ details.photo.url }}"/>
+            {% endif %}
+          <div  style="color: BROWN " class="content-heading"><h1>DETAILS </h1></div>
+            <h3 style="color:blue">EMAIL : </h3>
+            <H3> {{ details.email }}</H3>
+            <h3 style="COLOR:BLUE"> PHONE NO:</h3>
+          <h3> {{ details.phone_no }}</h3>
+            <H3 style="COLOR: BLUE">BRANCH :</H3>
+          <h3> {{ details.branch_choice}} </h3>
+            <br>
+            <br>
+            <br>
+            <br><video width ='1000' height = '300' class="video-fluid z-depth-1" autoplay loop controls muted >
+               <source src="{{ details.video.url }}" type="video/mp4" />
+        </video>
+        </div>
+      </div>
+     </div>
+    </div>
+</div>
+{% endfor %}
+</body>
+</html>

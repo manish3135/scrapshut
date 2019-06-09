@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>add detail</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<style media="screen">
+ background-image : url('https://cdn.pixabay.com/photo/2017/08/12/10/13/background-2633962__340.jpg')
+  h2 {
+    color: red
+  }
+  .site-form {
+    border-style: solid;
+    margin: auto;
+    width: 60%;
+    border: 3px solid #73AD21;
+    padding: 10px;
+  }
+  .jumbotron {
+     background-image : url('https://cdn.pixabay.com/photo/2017/03/02/08/58/background-texture-2110724__340.jpg');
+}
+</style>
+<body>
+<h1 class="text-center" style="color:red"> ENTER THE DETAIL </h1>
+<h4><a href="{% url 'information:list' %}" class="text-info"> BACK TO INFORMATION </a></h4>
+<h4><a href="{% url 'homepage' %}" class="text-info"> BACK TO HOMEPAGE </a></h4>
+<BR>
+<div class="jumbotron">
+<form class="site-form" action="{% url 'information:add_detail' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">submit</button>
+</form>
+</div>
+</body>
+</html>
